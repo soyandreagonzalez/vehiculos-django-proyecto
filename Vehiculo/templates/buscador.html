@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% extends "layout.html" %}
+
+    {% block content %}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <form action="/buscar" method="POST">
+                    <input type="text" placeholder="BUSCAR POR PLACA" name="placa" class="form-control">
+                    <br>
+                    <a><button title="¡Click! para guardar tus datos" name="btn-enviar"
+                            class="btn btn-dark btn-lg btn-block"
+                            style="background:rgba(146, 60, 216, 0.51);">BUSCAR</button></a>
+                </form>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+    <br>
+    {%for vehiculo in vehiculos%}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="card mb-3" style="background: rgb(0, 0, 0); -webkit-box-shadow: -1px 0px 14px 6px rgba(85, 83, 83, 0.51); 
+                box-shadow: -1px 0px 14px 6px rgba(146, 60, 216, 0.51); border: 2px solid #ffffff;
+                            border-radius: 20px;">
+                    <form class="datos1 text-center" action="/buscar" method="POST" style="padding: 40px;color: white;">
+                        <h2>¡TU VEHICULO!</h2>
+                        <br>
+                        <div class="container-fluid ">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>PLACA</label>
+                                    <input class="form-control" type="text" name=marca value="{{vehiculo[1]}}">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>DOCUMENTO</label>
+                                    <input class="form-control" type="text" name=nom value="{{vehiculo[6]}}">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>NOMBRE</label>
+                                    <input class="form-control" type="text" name=nom value="{{vehiculo[5]}}">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>ESTADO</label>
+                                    <input class="form-control" type="text" name=estado value="{{vehiculo[8]}}">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+    </div>
+    </div>
+    {% endfor %}
+    {% endblock %}
+</body>
+
+</html>

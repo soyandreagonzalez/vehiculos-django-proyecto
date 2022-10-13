@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% extends "layout.html" %}
+
+    {% block content %}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+                <div class="card mb-3" style="background: rgb(0, 0, 0); -webkit-box-shadow: -1px 0px 14px 6px rgba(85, 83, 83, 0.51); 
+                box-shadow: -1px 0px 14px 6px rgba(146, 60, 216, 0.51); border: 2px solid #ffffff;
+                            border-radius: 20px;">
+                    <div class="row no-gutters">
+                        <div class="col-sm-12">
+                            <div class="card-body">
+                                <div class="container-fluid"
+                                    style=" font-family: 'Antonio';font-size: 18px;color: white;">
+                                    <form class="datos1" method="POST" action="/store" style="padding: 40px;">
+                                        <h2 class="text-center">INGRESO DE VEHICULOS</h2>
+                                        <div class="form-row ">
+                                            <div class="col-sm-6">
+                                                <label>Placa</label>
+                                                <input name="placa" type="text" class="form-control"
+                                                    placeholder="Placa del vehiculo">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label for="inputState">Modelo</label>
+                                                <select name="modelo" class="form-control">
+                                                    <option>↓</option>
+                                                    <option value="2023">2023</option>
+                                                    <option value="2022">2022</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2018">2018</option>
+                                                    <option value="2017">2017</option>
+                                                    <option value="2016">2016</option>
+                                                    <option value="2015">2015</option>
+                                                    <option value="2014">2014</option>
+                                                    <option value="2013">2013</option>
+                                                    <option value="2012">2012</option>
+                                                    <option value="2011">2011</option>
+                                                    <option value="2010">2010</option>
+                                                    <option value="2009">2009</option>
+                                                    <option value="2008">2008</option>
+                                                    <option value="2007">2007</option>
+                                                    <option value="2006">2006</option>
+                                                    <option value="2005">2005</option>
+                                                    <option value="2004">2004</option>
+                                                    <option value="2003">2003</option>
+                                                    <option value="2002">2002</option>
+                                                    <option value="2001">2001</option>
+                                                    <option value="2000">2000</option>
+                                                </select>                                               
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-row ">
+                                            <div class="col-sm-6">
+                                                <label>Marca</label>
+                                                <input name="marca" type="text" class="form-control"
+                                                    placeholder="Marca del vehiculo">
+                                                
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label>Color</label>
+                                                <input name="color" type="text" class="form-control"
+                                                    placeholder="Color del vehiculo">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-row ">
+                                            <div class="col-sm-12">
+                                                <label>PROPIETARIO</label>
+                                                <input name="nom" type="text" class="form-control"
+                                                    placeholder="Nombre del propietario">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-row ">
+                                            <div class="col-sm-12">
+                                                <label>DOCUMENTO</label>
+                                                <input name="doc" type="number" class="form-control"
+                                                    placeholder="Documento del propietario">
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Motivo</label>
+                                                    <textarea class="form-control" name="motivo" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="form-row">
+                                            <div class="col-sm-12">
+                                                <a><button title="¡Click! para guardar tus datos" name="btn-enviar"
+                                                        class="btn btn-dark btn-lg btn-block"
+                                                        style="background:rgba(146, 60, 216, 0.51);">REGISTRARSE</button></a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6"></div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

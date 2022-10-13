@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% extends "layout.html" %}
+
+    {% block content %}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="table-responsive">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">PLACA</th>
+                                <th scope="col">DOCUMENTO</th>
+                                <th scope="col">NOMBRE</th>
+                                <th scope="col">MOTIVO</th>
+                                <th scope="col">ESTADO</th>
+                                <th scope="col">ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for auto in vehiculos%}
+                            <tr>
+                                <td>{{auto[1]}}</td>
+                                <td>{{auto[6]}}</td>
+                                <td>{{auto[5]}}</td>
+                                <td>{{auto[7]}}</td>
+                                <td>{{auto[8]}}</td>
+                                <td><a href="/edit/{{auto[0]}}">Editar</a>/<a href="/destroy/{{auto[0]}}">Eliminar</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <form action="/busqueda" method="POST">
+                    <input type="text" placeholder="BUSCAR POR PLACA" name="placa" class="form-control">
+                    <br>
+                    <a><button title="¡Click! para guardar tus datos" name="btn-enviar"
+                            class="btn btn-dark btn-lg btn-block"
+                            style="background:rgba(146, 60, 216, 0.51);">BUSCAR</button></a>
+                </form>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+  
+    {% endblock %}
+</body>
+
+</html>
